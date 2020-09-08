@@ -30,4 +30,54 @@ After collecting our data, we were able to investigate all of the different stat
 After building several models from our data, one thing has become clear - defense may be more important than offense. The phrase "The best defense is a good offense" is very true, because it doesn't matter how many points you score if your opponent outscores you. Our models highlighted how bad defense can be more impactful than a good offense. Our models that utilized data from earlier games also picked up on which teams are the best teams in recent years, giving them more weight as being winning teams. 
 
 #### _Issues_
-Building a custom webscrape was extremely arduous, and created a whole number of challenges. Working with the blend of Python and HTML was really interesting, and I had never built a webscraper with such intricate detail like that before. Additionally, the nature of our data made organizing it for modeling quite the challenge. Each row had to be matched up with the proper opponent, and each row had to be repeated- once with the home team first, then again with the away team first. 
+Building a custom webscrape was extremely arduous, and created a whole number of challenges. Working with the blend of Python and HTML was really interesting, and I had never built a webscraper with such intricate detail like that before. Additionally, the nature of our data made organizing it for modeling quite the challenge. Each row had to be matched up with the proper opponent, and each row had to be repeated- once with the home team first, then again with the away team first.
+
+## Data Dictionary
+
+This data dictionary provides information for every column in the dataset.
+
+|Column Name|Data Type|Description|
+|:---|:---|:---|
+|Season |int |The year of that particular season|
+|Time Period |object|Differentiates if a game was played during the regular season or during the playoffs|
+|Date |Datetime|The date the game was played|
+|Team |object|The team name|
+|Team Abbreviation |object|The 3 letter abbreviation used for that team|
+|Location |object|The relative location of where the team played, either `Home` or `Away`|
+|Overtime |object|How many extra periods were required until there was a winner|
+|Result |object|The result for each team, either `W` for win, or `L` for loss|
+|Player |object|The name of the player on the team. `Team Totals` for the team's aggregated statistics|
+|MP |object|The total minutes a player was on the court|
+|FG |int|The number of baskets made. This includes 3-pointers|
+|FGA |int|The number of baskets attempted. This includes 3-pointers|
+|FG% |float|The number of baskets made divided by the number attempted. This includes 3-pointers|
+|3P |int|The number of 3-point baskets made|
+|3PA |int|The number of 3-point baskets attempted|
+|3P% |float|The number of 3-point baskets made divided by the number of 3-pointers attempted|
+|FT |int|The number of Free Throws made|
+|FTA |int|The number of Free Throws attempted|
+|FT% |float|The number of Free Throws made divided by the number of Free Throws attempted|
+|ORB |int|The number of offensive rebounds|
+|DRB  | int | the number of defensive rebounds
+|TRB  | int | the total number of rebounds made
+|AST  | int | the number of assists
+|STL  | int | the number of steals
+|BLK  | int | the number of blocks
+|TOV  | int | the number of turnovers
+|PF   | int | the number of personal fouls
+|PTS  | int | the number of points
+|TS%  | float | `True Shooting Percentage` a measure of shooting efficiency that takes 3-pointers, field goals, and free throws into account
+|eFG% | float | `Effective Field Goal Percentage` a weighted version of field goal percentage that take 3-pointers into account
+|3PAr | float | `3 Point Attempt Rate` the rate in which a player shoots 3 pointers. 3PA divided by FGA
+|FTr  | float | `Free Throw Attempt Rate` the rate at which a player is fouled per shot attempt. FTA divided by FGA
+|ORB% | float | `Offensive Rebound Percentage` - an estimate of the percentage of available offensive rebounds a player grabbed while he was on the floor
+|DRB% | float | `Defensive Rebound Percentage` - an estimate of the percentage of available defensive rebounds a player grabbed while he was on the floor
+|TRB% | float | `Total Rebound Percentage` - an estimate of the percentage of available rebounds a player grabbed while he was on the floor
+|AST% | float | `Assist Percentage` - an estimate of the percentage of teammate field goals a player assisted while he was on the floor
+|STL% | float | `Steal Percentage` - an estimate of the percentage of opponent possessions that end with a steal by the player while he was on the floor
+|BLK% | float | `Block Percentage` - an estimate of the percentage of opponent two-point field goal attempts blocked by the player while he was on the floor
+|TOV% | float | `Turnover Percentage` is an estimate of turnovers per 100 plays
+|USG% | float |`Usage Percentage` - an estimate of the percentage of team plays used by a player while he was on the floor
+|ORtg | float |  `Offensive Rating` - an estimate of points produced per 100 plays. An explanation can be found [here](https://www.basketball-reference.com/about/ratings.html)
+|DRtg | float | `Defensive Rating` - an estimate of points allowed per 100 plays. An explanation can be found [here](https://www.basketball-reference.com/about/ratings.html)
+|BPM  | float | `Box Plus/Minus` - a box score estimate of the points per 100 possessions that a player contributed above a league-average player. an explanation can be found [here](https://www.basketball-reference.com/about/bpm2.html)
