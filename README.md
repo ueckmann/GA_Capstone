@@ -81,3 +81,18 @@ This data dictionary provides information for every column in the dataset.
 |ORtg | float |  `Offensive Rating` - an estimate of points produced per 100 plays. An explanation can be found [here](https://www.basketball-reference.com/about/ratings.html)
 |DRtg | float | `Defensive Rating` - an estimate of points allowed per 100 plays. An explanation can be found [here](https://www.basketball-reference.com/about/ratings.html)
 |BPM  | float | `Box Plus/Minus` - a box score estimate of the points per 100 possessions that a player contributed above a league-average player. an explanation can be found [here](https://www.basketball-reference.com/about/bpm2.html)
+
+## Conclusions
+Both sets of modeling were relatively successful. The inference modeling wherein we modeled using game data from games that were already over helped emphasize the parts of the game that teams can focus on that will help them win. This actually illustrated how defense is a much more integral part of the game than offense. In a time where it seems like teams are hardly playing any defense at all, if a team focuses on their defense, they'll have a much better chance of winning games.
+
+Our predictive model performed moderately well. It certainly did better than our baseline, and predicting with 65% accuracy for the whole league is pretty good. Introducing this model to new data, with specific teams might actually prove that the model performs even better.
+
+## Recommendations
+1. Utilize more lagged data. Our models might perform far better if they are able to use data from more games than just the last one. As the season goes on, more data becomes available, which can be implemented into the dataframe and perhaps create better models. 
+2. Aggregate Lagged Data. Utilizing team averages for a longer period may help create better models.
+3. Remove features from models. Certain features may be leaking data in our inference model, and that can affect the overall predictive ability. In the predictive model, certain features seem to hold no value, and it's worth iterating through the model to trim those out in order to improve the model coefficients.
+4. Utlize other Models. There are other potential models that could prove useful here, such as GLMs, Time Series, Neural Networks and PCAs
+5. Build Regression Models. It's one thing to predict the winner, it's a whole other thing to predict the point differentials.
+
+## References
+- [Basketball-reference.com](https://www.basketball-reference.com/)
